@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>liuyan-text-to-slides · 流宴图文模板</title>
+<style>
+  :root{
+    --bg:#fffdf8; --text:#2b2b2b; --muted:#6b6b6b; --gold:#c8a24a;
+    --line:#e7e0d2; --panel:#f7f2e7; --accent:#1f3a5f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans GB","STHeiti","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+  .topbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;
+    gap:12px;padding:14px 20px;background:rgba(255,253,248,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line)}
+  .brand{font-weight:700;color:var(--accent);font-size:15px;white-space:nowrap}
+  .brand small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+  .lang-switch{display:flex;border:1px solid var(--gold);border-radius:999px;overflow:hidden}
+  .lang-switch button{border:0;background:transparent;color:var(--accent);padding:7px 16px;font-size:14px;cursor:pointer;font-weight:600}
+  .lang-switch button.active{background:var(--gold);color:#fff}
+  .wrap{max-width:880px;margin:0 auto;padding:32px 20px 80px}
+  h1{font-size:30px;margin:.2em 0 .1em;color:var(--accent)}
+  h2{font-size:22px;margin:2em 0 .6em;color:var(--accent);border-left:4px solid var(--gold);padding-left:10px}
+  h3{font-size:17px;margin:1.2em 0 .4em}
+  p{margin:.6em 0}
+  a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(200,162,74,.4)}
+  a:hover{color:#a9853a}
+  blockquote{margin:1em 0;padding:12px 16px;background:var(--panel);border-left:4px solid var(--gold);border-radius:6px;color:var(--muted)}
+  code{background:var(--panel);padding:2px 6px;border-radius:4px;font-size:14px;font-family:"SF Mono",Menlo,Consolas,monospace}
+  pre{background:#1f2933;color:#e6e6e6;padding:16px;overflow:auto;border-radius:8px;font-size:13.5px;line-height:1.5}
+  pre code{background:transparent;color:inherit;padding:0}
+  table{border-collapse:collapse;width:100%;margin:1em 0;font-size:14px}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:var(--panel);color:var(--accent)}
+  .gallery{border:0}
+  .gallery td{border:0;width:50%;padding:6px 8px;text-align:center}
+  .gallery img{width:100%;max-width:260px;border:1px solid var(--line);border-radius:8px}
+  .gallery .cap{font-size:13px;color:var(--muted);margin-top:4px}
+  .hero{background:linear-gradient(135deg,#1f3a5f,#2c4f7c);color:#fff;border-radius:12px;padding:22px 24px;margin-bottom:8px}
+  .hero h1{color:#fff}
+  .hero .gold{color:var(--gold)}
+  .hero p{color:#dfe7f2}
+  footer{margin-top:3em;border-top:1px solid var(--line);padding-top:1.2em;color:var(--muted);font-size:14px}
+  [data-lang]{display:none}
+  body.lang-zh [data-lang="zh"]{display:block}
+  body.lang-en [data-lang="en"]{display:block}
+  body.lang-zh .inline-zh{display:inline}
+  body.lang-en .inline-zh{display:none}
+</style>
+</head>
+<body class="lang-en">
+<div class="topbar">
+  <div class="brand">liuyan-text-to-slides<small>流宴图文模板 · 小红书长文字图文生成器</small></div>
+  <div class="lang-switch">
+    <button id="btn-zh" onclick="setLang('zh')">中文</button>
+    <button id="btn-en" class="active" onclick="setLang('en')">English</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div data-lang="en"><h1>liuyan-text-to-slides</h1>
+      <p>Fit a long passage into Xiaohongshu's mainstream 3:4 (1080×1440) image-text: a big-title cover plus auto-paginated body pages, all rendered in the chosen palette — ready to post.</p></div>
+    <div data-lang="zh"><h1>流宴图文模板</h1>
+      <p>把一段长文「fit」进小红书主流的 3:4（1080×1440）图文：第 1 张封面（大字标题）+ 后续内页（自动分页），正文用指定配色生成，可直接发小红书。</p></div>
+  </div>
+
+  <!-- SKILL NOTE -->
+  <div data-lang="en"><blockquote>A WorkBuddy / CodeBuddy Skill: when the user mentions a palette theme name (e.g. "Northern Morning", "Twilight Violet") and asks to "generate images / make image-text / create a Xiaohongshu note / use XX palette", it automatically generates a full set of PNGs (cover + pages) in that palette.</blockquote></div>
+  <div data-lang="zh"><blockquote>WorkBuddy / CodeBuddy 的 Skill：当用户提到某个配色主题名（如「北境清晨」「暮光紫罗兰」）并要求「出图 / 做图文 / 生成小红书笔记 / 用 XX 配色」时，自动用该配色生成一整套 PNG（封面 + 内页）。</blockquote></div>
+
+  <!-- FEATURES -->
+  <h2 data-lang="en">Features</h2>
+  <h2 data-lang="zh">功能特性</h2>
+  <div data-lang="en">
+    <ul>
+      <li><b>28 curated palettes</b>: use by name; defaults to "Deep Blue &amp; Gold" when none is specified.</li>
+      <li><b>Auto-pagination</b>: intelligently paginates by content height without cutting off sentences.</li>
+      <li><b>Structured markup</b>: section headings, quote cards, golden keyword highlights — turn long text into Xiaohongshu style in seconds.</li>
+      <li><b>Crisp Chinese fonts</b>: uses system Chinese vector fonts (Hiragino Sans GB / STHeiti), no blurring.</li>
+      <li><b>Easy to extend</b>: all palettes live in <code>scripts/palettes.py</code> — add one entry to add a new palette.</li>
+    </ul>
+  </div>
+  <div data-lang="zh">
+    <ul>
+      <li><b>28 套精选配色</b>：提到名字即用，没提配色时默认「深蓝金白」。</li>
+      <li><b>自动分页</b>：按内容高度智能分页，不截断句子。</li>
+      <li><b>结构化标记语法</b>：章节标题、金句卡片、关键词金色高亮，长文秒变小红书风格。</li>
+      <li><b>中文字体清晰</b>：走系统中文矢量字体（Hiragino Sans GB / STHeiti），不糊。</li>
+      <li><b>配色易扩展</b>：所有配色集中在 <code>scripts/palettes.py</code>，加一项即可新增。</li>
+    </ul>
+  </div>
+
+  <!-- PALETTES -->
+  <h2 data-lang="en">28 Available Palettes (use by name)</h2>
+  <h2 data-lang="zh">28 套可用配色（提到名字即用）</h2>
+  <div data-lang="en">
+    <table>
+      <tr><th>Group</th><th>Palette names</th></tr>
+      <tr><td>Primary / Image-sourced</td><td>Deep Blue &amp; Gold, Autumn Warm Brown, Blue-Brown Coffee, Healing Purple Invert, Beige &amp; Black-Red, Northern Morning, Autumn Letter, Oat Latte, Midnight Study, Twilight Violet, Burgundy Theatre, Soft Mist Rose, Whitespace Berry Purple</td></tr>
+      <tr><td>Classic suggestions</td><td>XHS Classic Pink, Dopamine Warm Orange, Morandi Low-Saturation, Cream Off-White, Fresh Macaron, Dark Luxe Gold, Intellectual Blue</td></tr>
+      <tr><td>Additional classics</td><td>Klein Blue, Guochao Red-Gold, Emerald Jade, Taro Purple Bright, Avocado Mint, Maillard Caramel, Salt Minimal Grey, Tomato Vitality Red</td></tr>
+    </table>
+    <p>Every palette guarantees sufficient contrast between <b>background / title / body</b> for readable long text (light palettes use a dark neutral body color; dark palettes use a light one).</p>
+  </div>
+  <div data-lang="zh">
+    <table>
+      <tr><th>分组</th><th>配色名</th></tr>
+      <tr><td>主配色 / 图片取色</td><td>深蓝金白、秋日暖棕、蓝棕咖啡、治愈紫反转、米杏黑红、北境清晨、秋日信笺、燕麦拿铁、午夜书房、暮光紫罗兰、勃艮第剧场、柔雾玫瑰、留白莓紫</td></tr>
+      <tr><td>经典建议</td><td>小红书经典粉、多巴胺暖橙、莫兰迪低饱和、奶油米白、清新马卡龙、暗黑高级金、知性蓝</td></tr>
+      <tr><td>追加经典</td><td>克莱因蓝、国潮红金、祖母绿翡翠、香芋紫亮版、牛油果薄荷、美拉德焦糖、盐系冷淡灰、番茄活力红</td></tr>
+    </table>
+    <p>每套配色都保证「背景 / 标题重点 / 正文」三者对比度足够，长文字可读（浅底配色正文用深中性色，深底配色正文用浅色）。</p>
+  </div>
+
+  <!-- PREVIEW -->
+  <h2 data-lang="en">Palette Preview (28 sets)</h2>
+  <h2 data-lang="zh">配色预览（28 套）</h2>
+  <div data-lang="en"><p>Each image is a "Xiaohongshu cover + 6-color swatch" rendered in the corresponding palette; the bottom swatches, left to right, are: <b>Background / Title / Body / Stroke / Secondary text / Card background</b>.</p></div>
+  <div data-lang="zh"><p>每张图都是用对应配色渲染的「小红书封面 + 6 色色卡」；底部色卡从左到右依次为：<b>背景 / 标题色 / 正文色 / 描边 / 次要文字 / 卡片底</b>。</p></div>
+
+  <table class="gallery">
+    <tr>
+      <td><img src="previews/01.png" alt="Deep Blue &amp; Gold"><div class="cap" data-lang="en">Deep Blue &amp; Gold</div><div class="cap" data-lang="zh">深蓝金白</div></td>
+      <td><img src="previews/15.png" alt="Dopamine Warm Orange"><div class="cap" data-lang="en">Dopamine Warm Orange</div><div class="cap" data-lang="zh">多巴胺暖橙</div></td>
+    </tr>
+    <tr>
+      <td><img src="previews/02.png" alt="Autumn Warm Brown"><div class="cap" data-lang="en">Autumn Warm Brown</div><div class="cap" data-lang="zh">秋日暖棕</div></td>
+      <td><img src="previews/16.png" alt="Morandi Low-Saturation"><div class="cap" data-lang="en">Morandi Low-Saturation</div><div class="cap" data-lang="zh">莫兰迪低饱和</div></td>
+    </tr>
+    <tr>
+      <td><img src="previews/03.png" alt="Blue-Brown Coffee"><div class="cap" data-lang="en">Blue-Brown Coffee</div><div class="cap" data-lang="zh">蓝棕咖啡</div></td>
+      <td><img src="previews/17.png" alt="Cream Off-White"><div class="cap" data-lang="en">Cream Off-White</div><div class="cap" data-lang="zh">奶油米白</div></td>
+    </tr>
+    <tr>
+      <td><img src="previews/04.png" alt="Healing Purple Invert"><div class="cap" data-lang="en">Healing Purple Invert</div><div class="cap" data-lang="zh">治愈紫反转</div></td>
+      <td><img src="previews/18.png" alt="Fresh Macaron"><div class="cap" data-lang="en">Fresh Macaron</div><div class="cap" data-lang="zh">清新马卡龙</div></td>
+    </tr>
+    <tr>
+      <td><img src="previews/05.png" alt="Beige &amp; Black-Red"><div class="cap" data-lang="en">Beige &amp; Black-Red</div><div class="cap" data-lang="zh">米杏黑红</div></td>
+      <td><img src="previews/19.png" alt="Dark Luxe Gold"><div class="cap" data-lang="en">Dark Luxe Gold</div><div class="cap" data-lang="zh">暗黑高级金</div></td>
+    </tr>
+    <tr>
+      <td><img src="previews/06.png" alt="Northern Morning"><div class="cap" data-lang="en">Northern Morning</div><div class="cap" data-lang="zh">北境清晨</div></td>
+      <td><img src="previews/20.png" alt="Intellectual Blue"><div class="cap" data-lang="en">Intellectual Blue</div><div class="cap" data-lang="zh">知性蓝</div></td>
+    </tr>
+    <tr>
+      <td><img src="previews/07.png" alt="Autumn Letter"><div class="cap" data-lang="en">Autumn Letter</div><div class="cap" data-lang="zh">秋日信笺</div></td>
+      <td><img src="previews/21.png" alt="Klein Blue"><div class="cap" data-lang="en">Klein Blue</div><div class="cap" data-lang="zh">克莱因蓝</div></td>
+    </tr>
+    <tr>
+      <td><img src="previews/08.png" alt="Oat Latte"><div class="cap" data-lang="en">Oat Latte</div><div class="cap" data-lang="zh">燕麦拿铁</div></td>
+      <td><img src="previews/22.png" alt="Guochao Red-Gold"><div class="cap" data-lang="en">Guochao Red-Gold</div><div class="cap" data-lang="zh">国潮红金</div></td>
+    </tr>
+    <tr>
+      <td><img src="previews/09.png" alt="Midnight Study"><div class="cap" data-lang="en">Midnight Study</div><div class="cap" data-lang="zh">午夜书房</div></td>
+      <td><img src="previews/23.png" alt="Emerald Jade"><div class="cap" data-lang="en">Emerald Jade</div><div class="cap" data-lang="zh">祖母绿翡翠</div></td>
+    </tr>
+    <tr>
+      <td><img src="previews/10.png" alt="Twilight Violet"><div class="cap" data-lang="en">Twilight Violet</div><div class="cap" data-lang="zh">暮光紫罗兰</div></td>
+      <td><img src="previews/24.png" alt="Taro Purple Bright"><div class="cap" data-lang="en">Taro Purple Bright</div><div class="cap" data-lang="zh">香芋紫亮版</div></td>
+    </tr>
+    <tr>
+      <td><img src="previews/11.png" alt="Burgundy Theatre"><div class="cap" data-lang="en">Burgundy Theatre</div><div class="cap" data-lang="zh">勃艮第剧场</div></td>
+      <td><img src="previews/25.png" alt="Avocado Mint"><div class="cap" data-lang="en">Avocado Mint</div><div class="cap" data-lang="zh">牛油果薄荷</div></td>
+    </tr>
+    <tr>
+      <td><img src="previews/12.png" alt="Soft Mist Rose"><div class="cap" data-lang="en">Soft Mist Rose</div><div class="cap" data-lang="zh">柔雾玫瑰</div></td>
+      <td><img src="previews/26.png" alt="Maillard Caramel"><div class="cap" data-lang="en">Maillard Caramel</div><div class="cap" data-lang="zh">美拉德焦糖</div></td>
+    </tr>
+    <tr>
+      <td><img src="previews/13.png" alt="Whitespace Berry Purple"><div class="cap" data-lang="en">Whitespace Berry Purple</div><div class="cap" data-lang="zh">留白莓紫</div></td>
+      <td><img src="previews/27.png" alt="Salt Minimal Grey"><div class="cap" data-lang="en">Salt Minimal Grey</div><div class="cap" data-lang="zh">盐系冷淡灰</div></td>
+    </tr>
+    <tr>
+      <td><img src="previews/14.png" alt="XHS Classic Pink"><div class="cap" data-lang="en">XHS Classic Pink</div><div class="cap" data-lang="zh">小红书经典粉</div></td>
+      <td><img src="previews/28.png" alt="Tomato Vitality Red"><div class="cap" data-lang="en">Tomato Vitality Red</div><div class="cap" data-lang="zh">番茄活力红</div></td>
+    </tr>
+  </table>
+
+  <!-- QUICK START -->
+  <h2 data-lang="en">Quick Start</h2>
+  <h2 data-lang="zh">快速开始</h2>
+  <div data-lang="en"><p>Requires <a href="https://pypi.org/project/Pillow/">Pillow</a>:</p></div>
+  <div data-lang="zh"><p>依赖 <a href="https://pypi.org/project/Pillow/">Pillow</a>：</p></div>
+  <pre><code>pip install Pillow</code></pre>
+  <div data-lang="en"><p>Generate an example (using the "Northern Morning" palette + tagged text):</p></div>
+  <div data-lang="zh"><p>生成示例（用「北境清晨」配色 + 一段带标记的文字）：</p></div>
+  <pre><code>python scripts/xhs_template.py \
+  --palette 北境清晨 \
+  --title "认知公地悲剧" \
+  --sub "越用 AI，越没人真正懂行" \
+  --tag "流宴图文" \
+  --kicker "深度思考" \
+  --text-file your_text.txt \
+  --out ./output</code></pre>
+  <div data-lang="en"><blockquote>If you use WorkBuddy's managed isolated Python (which already bundles Pillow), run it with that interpreter directly:<br><code>/Users/robert/.workbuddy/binaries/python/envs/default/bin/python scripts/xhs_template.py ...</code></blockquote></div>
+  <div data-lang="zh"><blockquote>若你使用 WorkBuddy 的托管隔离 Python（已带 Pillow），可直接用其解释器运行：<br><code>/Users/robert/.workbuddy/binaries/python/envs/default/bin/python scripts/xhs_template.py ...</code></blockquote></div>
+
+  <!-- CLI -->
+  <h2 data-lang="en">Command-line Arguments</h2>
+  <h2 data-lang="zh">命令行参数</h2>
+  <div data-lang="en">
+    <table>
+      <tr><th>Argument</th><th>Description</th></tr>
+      <tr><td><code>--palette</code> (required)</td><td>Palette name, choose from the 28 above.</td></tr>
+      <tr><td><code>--title</code></td><td>Cover main title.</td></tr>
+      <tr><td><code>--sub</code></td><td>Cover subtitle.</td></tr>
+      <tr><td><code>--tag</code></td><td>Footer tag.</td></tr>
+      <tr><td><code>--kicker</code></td><td>Column small label.</td></tr>
+      <tr><td><code>--text</code></td><td>Pass body text directly; or <code>--text-file</code> to read a file (choose one; if neither is given, a built-in sample is used).</td></tr>
+      <tr><td><code>--out</code></td><td>Output directory (default: the script's own directory).</td></tr>
+    </table>
+  </div>
+  <div data-lang="zh">
+    <table>
+      <tr><th>参数</th><th>说明</th></tr>
+      <tr><td><code>--palette</code>（必需）</td><td>配色名，从上方 28 套里选。</td></tr>
+      <tr><td><code>--title</code></td><td>封面主标题。</td></tr>
+      <tr><td><code>--sub</code></td><td>封面副标题。</td></tr>
+      <tr><td><code>--tag</code></td><td>页脚标签。</td></tr>
+      <tr><td><code>--kicker</code></td><td>栏目小标。</td></tr>
+      <tr><td><code>--text</code></td><td>直接传正文；或 <code>--text-file</code> 读文件（二选一，都不给则用内置示例）。</td></tr>
+      <tr><td><code>--out</code></td><td>输出目录（默认脚本所在目录）。</td></tr>
+    </table>
+  </div>
+
+  <!-- MARKUP -->
+  <h2 data-lang="en">Body Markup Syntax</h2>
+  <h2 data-lang="zh">正文标记语法（让长文自动变结构化图文）</h2>
+  <pre><code>## Section heading
+This is body text, where **keyword** is highlighted in gold.
+
+>> This is a quote card (bordered + accent color).</code></pre>
+  <div data-lang="en">
+    <ul>
+      <li><code>## </code> prefix → section heading (gold + square bullet).</li>
+      <li><code>&gt;&gt; </code> prefix → quote card.</li>
+      <li>inline <code>**word**</code> → gold highlight.</li>
+      <li>plain line → body text.</li>
+    </ul>
+  </div>
+  <div data-lang="zh">
+    <ul>
+      <li><code>## </code> 开头 → 章节标题（金色 + 方块 bullet）。</li>
+      <li><code>&gt;&gt; </code> 开头 → 金句卡片。</li>
+      <li>行内 <code>**词语**</code> → 该词金色高亮。</li>
+      <li>普通行 → 正文。</li>
+    </ul>
+  </div>
+
+  <!-- OUTPUT -->
+  <h2 data-lang="en">Output</h2>
+  <h2 data-lang="zh">输出</h2>
+  <div data-lang="en"><p><code>xhs_01_cover.png</code> + <code>xhs_02_page.png</code> + … (1 cover + N pages), all 1080×1440.</p></div>
+  <div data-lang="zh"><p><code>xhs_01_cover.png</code> + <code>xhs_02_page.png</code> + …（封面 1 张 + 内页若干），全部 1080×1440。</p></div>
+
+  <!-- STRUCTURE -->
+  <h2 data-lang="en">Directory Structure</h2>
+  <h2 data-lang="zh">目录结构</h2>
+  <pre><code>liuyan-text-to-slides/
+├── SKILL.md              # Skill metadata &amp; docs (loaded by WorkBuddy)
+├── README.md             # This file
+├── LICENSE               # MIT License
+├── index.html            # Bilingual interactive doc (this page)
+├── gen_previews.py       # 28-palette preview generator (reproducible)
+├── previews/             # 28 palette preview images (for gallery)
+│   ├── 01.png
+│   └── ...
+└── scripts/
+    ├── xhs_template.py   # main generator script
+    └── palettes.py      # 28 palette definitions (edit here to add palettes)</code></pre>
+
+  <!-- TECH -->
+  <h2 data-lang="en">Technical Notes</h2>
+  <h2 data-lang="zh">技术要点</h2>
+  <div data-lang="en">
+    <ul>
+      <li>Chinese fonts use macOS system fonts (Hiragino Sans GB / STHeiti) for crisp rendering.</li>
+      <li>All palettes live in <code>scripts/palettes.py</code>; to add a palette just add one entry to <code>PALETTES</code> (bg / gold / text / line / dim / panel — six values).</li>
+      <li>It is in the same family as <code>jinjin-cover-page</code>; this Skill is the consolidated main entry.</li>
+    </ul>
+  </div>
+  <div data-lang="zh">
+    <ul>
+      <li>中文字体走 macOS 系统字体（Hiragino Sans GB / STHeiti），中文清晰不糊。</li>
+      <li>配色全部集中在 <code>scripts/palettes.py</code>，新增配色只需往 <code>PALETTES</code> 里加一项（bg / gold / text / line / dim / panel 六值）。</li>
+      <li>与 <code>jinjin-cover-page</code> 是同族能力，本 Skill 为整合后的主入口。</li>
+    </ul>
+  </div>
+
+  <!-- LICENSE -->
+  <h2 data-lang="en">License</h2>
+  <h2 data-lang="zh">许可证</h2>
+  <div data-lang="en"><p><a href="./LICENSE">MIT License</a> © 2026 jinjinli5657</p></div>
+  <div data-lang="zh"><p><a href="./LICENSE">MIT License</a> © 2026 jinjinli5657</p></div>
+
+  <footer>
+    <div data-lang="en">liuyan-text-to-slides · A WorkBuddy Skill for Xiaohongshu long-form image-text.</div>
+    <div data-lang="zh">流宴图文模板 · 用于小红书长文字图文生成的 WorkBuddy Skill。</div>
+  </footer>
+</div>
+
+<script>
+  function setLang(lang){
+    document.body.className = 'lang-' + lang;
+    document.getElementById('btn-zh').classList.toggle('active', lang==='zh');
+    document.getElementById('btn-en').classList.toggle('active', lang==='en');
+    try{ localStorage.setItem('ly-lang', lang); }catch(e){}
+  }
+  (function(){
+    var saved = null;
+    try{ saved = localStorage.getItem('ly-lang'); }catch(e){}
+    if(saved==='zh' || saved==='en'){ setLang(saved); }
+    else { setLang('en'); } // default English
+  })();
+</script>
+</body>
+</html>

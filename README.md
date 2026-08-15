@@ -1,5 +1,7 @@
 # 流宴图文模板（liuyan-text-to-slides）
 
+> 🌐 **Bilingual / 中英双语**：[在线交互版（点「中文 / English」切换，默认英文）](https://jinjinli5657.github.io/liuyan-text-to-slides/) · 也可直接打开仓库里的 `index.html`。
+
 把一段长文「fit」进小红书主流的 3:4（1080×1440）图文：第 1 张封面（大字标题）+ 后续内页（自动分页），正文用指定配色生成，可直接发小红书。
 
 > WorkBuddy / CodeBuddy 的 Skill：当用户提到某个配色主题名（如「北境清晨」「暮光紫罗兰」）并要求「出图 / 做图文 / 生成小红书笔记 / 用 XX 配色」时，自动用该配色生成一整套 PNG（封面 + 内页）。
@@ -103,6 +105,7 @@ python scripts/xhs_template.py \
 liuyan-text-to-slides/
 ├── SKILL.md              # Skill 元数据与说明（WorkBuddy 加载用）
 ├── README.md             # 本文件
+├── index.html            # 中英双语交互文档（可托管 GitHub Pages）
 ├── LICENSE               # MIT License
 ├── gen_previews.py       # 28 套配色预览图生成器（可复现）
 ├── previews/             # 28 套配色预览图（README 画廊用）
