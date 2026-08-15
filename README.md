@@ -1,4 +1,4 @@
-# 流宴图文模板（liuyan-template）
+# 流宴图文模板（liuyan-text-to-slides）
 
 把一段长文「fit」进小红书主流的 3:4（1080×1440）图文：第 1 张封面（大字标题）+ 后续内页（自动分页），正文用指定配色生成，可直接发小红书。
 
@@ -21,6 +21,27 @@
 | 追加经典 | 克莱因蓝、国潮红金、祖母绿翡翠、香芋紫亮版、牛油果薄荷、美拉德焦糖、盐系冷淡灰、番茄活力红 |
 
 每套配色都保证「背景 / 标题重点 / 正文」三者对比度足够，长文字可读（浅底配色正文用深中性色，深底配色正文用浅色）。
+
+## 配色预览（28 套）
+
+每张图都是用对应配色渲染的「小红书封面 + 6 色色卡」；底部色卡从左到右依次为：**背景 / 标题色 / 正文色 / 描边 / 次要文字 / 卡片底**。
+
+| 配色 | 预览 | 配色 | 预览 |
+|---|---|---|---|
+| 深蓝金白 | ![](previews/01.png) | 多巴胺暖橙 | ![](previews/15.png) |
+| 秋日暖棕 | ![](previews/02.png) | 莫兰迪低饱和 | ![](previews/16.png) |
+| 蓝棕咖啡 | ![](previews/03.png) | 奶油米白 | ![](previews/17.png) |
+| 治愈紫反转 | ![](previews/04.png) | 清新马卡龙 | ![](previews/18.png) |
+| 米杏黑红 | ![](previews/05.png) | 暗黑高级金 | ![](previews/19.png) |
+| 北境清晨 | ![](previews/06.png) | 知性蓝 | ![](previews/20.png) |
+| 秋日信笺 | ![](previews/07.png) | 克莱因蓝 | ![](previews/21.png) |
+| 燕麦拿铁 | ![](previews/08.png) | 国潮红金 | ![](previews/22.png) |
+| 午夜书房 | ![](previews/09.png) | 祖母绿翡翠 | ![](previews/23.png) |
+| 暮光紫罗兰 | ![](previews/10.png) | 香芋紫亮版 | ![](previews/24.png) |
+| 勃艮第剧场 | ![](previews/11.png) | 牛油果薄荷 | ![](previews/25.png) |
+| 柔雾玫瑰 | ![](previews/12.png) | 美拉德焦糖 | ![](previews/26.png) |
+| 留白莓紫 | ![](previews/13.png) | 盐系冷淡灰 | ![](previews/27.png) |
+| 小红书经典粉 | ![](previews/14.png) | 番茄活力红 | ![](previews/28.png) |
 
 ## 快速开始
 
@@ -79,13 +100,17 @@ python scripts/xhs_template.py \
 ## 目录结构
 
 ```
-liuyan-template/
+liuyan-text-to-slides/
 ├── SKILL.md              # Skill 元数据与说明（WorkBuddy 加载用）
-├── README.md            # 本文件
-├── LICENSE              # MIT License
+├── README.md             # 本文件
+├── LICENSE               # MIT License
+├── gen_previews.py       # 28 套配色预览图生成器（可复现）
+├── previews/             # 28 套配色预览图（README 画廊用）
+│   ├── 01.png
+│   └── ...
 └── scripts/
-    ├── xhs_template.py  # 主生成脚本
-    └── palettes.py      # 28 套配色定义（新增配色改这里）
+    ├── xhs_template.py   # 主生成脚本
+    └── palettes.py       # 28 套配色定义（新增配色改这里）
 ```
 
 ## 技术要点
